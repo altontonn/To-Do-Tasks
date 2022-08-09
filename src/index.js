@@ -17,7 +17,16 @@ const todo = [
     completed: [true, false],
   },
 ];
-document.querySelector('.list').innerHTML = todo.map((todos) => (
+document.querySelector('.do-list').innerHTML = todo.map((todos) => (
   `<li class="todo todo-task task-${todos.index}"><button class="toggle" title="Check!" alt="Check!" tabindex="0"></button> ${todos.text} <i class="vert-ellips fas fa-ellipsis-v"></i></li>
     `
 )).join('');
+
+// const description = [
+//     {
+//         text: 'clear all completed'
+//     }
+// ]
+// document.querySelector('.list').innerHTML = description.map((desc) => (
+//     ` <li class="todo todo-clear"><a class="todo-link">${desc.text}</a></li>`
+// )).join('');
