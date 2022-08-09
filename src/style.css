@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f6f6f6;
+}
+
+.header h1 {
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.table-list {
+  border: 1px solid #ddd;
+  width: 50vw;
+  margin: 5rem auto;
+}
+
+.header input[type="text"] {
+  font-style: italic;
+  width: 100%;
+  padding: 0 40px 0 1rem;
+  line-height: 50px;
+  height: 50px;
+  outline: none;
+  border: 1px solid #ddd;
+}
+
+.addBtn {
+  padding: 10px;
+  width: 25%;
+  background: #d9d9d9;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
+
+.list {
+  list-style: none;
+  width: 100%;
+  padding-left: 0;
+}
+
+ul li {
+  position: relative;
+  background-color: #fff;
+  padding: 1em;
+  font-size: 1rem;
+  border-bottom: 1px solid #ddd;
+  font-weight: 300;
+}
+
+ul li button {
+  height: 16px;
+  width: 16px;
+}
+
+ul li.todo-clear {
+  background: #ddd;
+  font-style: italic;
+  text-align: center;
+}
+
+ul li a.todo-link:hover {
+  cursor: pointer;
+}
+
+.vert-ellips {
+  position: absolute;
+  right: 1rem;
+  opacity: 0.2;
+}
+
+.vert-ellips:hover {
+  cursor: pointer;
+}
