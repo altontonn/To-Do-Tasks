@@ -48,6 +48,10 @@ body {
   padding-left: 0;
 }
 
+.do-list {
+  list-style: none;
+}
+
 ul li {
   position: relative;
   background-color: #fff;
