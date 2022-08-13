@@ -1,6 +1,10 @@
 /* eslint max-classes-per-file: ["error", 3] */
 import './style.css';
-import Todo from './todo.js';
+class Todo {
+  constructor(task) {
+    this.task = task;
+  }
+}
 
 class UI {
   // UI
@@ -14,7 +18,7 @@ class UI {
    const li = document.createElement('li');
    list.appendChild(li);
    li.classList.add('todo');
-   li.innerHTML = '<input type="checkbox" class="li-check"> ' + `${todo.description}` + '<i class="trash fa fa-trash"></i><i class="vert-ellips fas fa-ellipsis-v"></i>';
+   li.innerHTML = `<input type="checkbox" class="li-check"> <input type="text" value="${todo.description}" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)"> <i class="trash fa fa-trash"></i><i class="vert-ellips fas fa-ellipsis-v"></i>`;
    li.children[0].addEventListener('click', () => {
      li.classList.toggle('completed');
    });
@@ -31,6 +35,7 @@ class UI {
     document.querySelector('#myInput').value = '';
   }
 }
+
 
 // storage
 class Store {
@@ -67,9 +72,16 @@ class Store {
     localStorage.setItem('lists', JSON.stringify(lists));
   }
 }
-
+var currentTask = null;
 const editing = (event) => {
   const todos = Store.getTodos();
+  // update task
+  todos.forEach(todo => {
+    if (todo.todo === currentTask) {
+      todo.todo = event.value;
+    }
+  });
+   localStorage.setItem('todos', JSON.stringify(todos));
 };
 // Event to display todo
 document.addEventListener('DOMContentLoaded', UI.displayTodo);
