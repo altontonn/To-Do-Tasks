@@ -1,125 +1,118 @@
-/* eslint max-classes-per-file: ["error", 3] */
+import Todo from './todo.js';
 import './style.css';
-class Todo {
-  constructor(task) {
-    this.task = task;
-  }
-}
 
-class UI {
-  // UI
-  static displayTodo = () => {
-    const todos = Store.getTodos();
-    todos.forEach((todo) => UI.addToList(todo));
-  }
+const tasks = document.querySelector('.task-items');
 
- static addToList = (todo) => {
-   const list = document.querySelector('.do-list-1');
-   const li = document.createElement('li');
-   list.appendChild(li);
-   li.classList.add('todo');
-   li.innerHTML = `<input type="checkbox" class="li-check"> <input type="text" value="${todo.description}" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)"> <i class="trash fa fa-trash"></i><i class="vert-ellips fas fa-ellipsis-v"></i>`;
-   li.children[0].addEventListener('click', () => {
-     li.classList.toggle('completed');
-   });
-   li.addEventListener('keypress', editing);
- }
+const refresh = document.querySelector('#refersh');
 
-  static deleteTask = (el) => {
-    if (el.classList.contains('trash')) {
-      el.parentElement.remove();
-    }
-  }
+const clearAll = document.querySelector('#clear');
 
-  static clearField = () => {
-    document.querySelector('#myInput').value = '';
-  }
-}
+const addNewTask = document.querySelector('#new-item');
+const enter = document.querySelector('#enter');
+const enterKey = document.querySelector('#new-item');
 
+let todos = JSON.parse(localStorage.getItem('todos')) || [];
 
-// storage
-class Store {
-  static getTodos() {
-    let todos;
-    if (localStorage.getItem('todos') === null) {
-      todos = [];
-    } else {
-      todos = JSON.parse(localStorage.getItem('todos')) || [];
-    }
-    return todos;
-  }
-
-  static addTodo(todo) {
-    const todos = Store.getTodos();
-    todos.push(todo);
-    localStorage.setItem('todos', JSON.stringify(todos));
-  }
-
-  static deleteTodo(index) {
-    const todos = Store.getTodos();
-    todos.splice(index, 1);
-    localStorage.setItem('todos', JSON.stringify(todos));
-  }
-
-  static UpdateMyIndex(index) {
-    const lists = Store.getTodos();
-    const removeList = lists.filter((item) => item.index !== index);
-    const newID = [];
-    removeList.forEach((el, i) => {
-      el.index = i + 1;
-      newID.push(el);
-    });
-    localStorage.setItem('lists', JSON.stringify(lists));
-  }
-}
-var currentTask = null;
-const editing = (event) => {
-  const todos = Store.getTodos();
-  // update task
-  todos.forEach(todo => {
-    if (todo.todo === currentTask) {
-      todo.todo = event.value;
-    }
-  });
-   localStorage.setItem('todos', JSON.stringify(todos));
+// display tasks function.
+const displayTodo = () => {
+  tasks.innerHTML = todos.map((todo) => ` 
+      <div id="${todo.index}" class="task item">
+        <div>
+            <input id="${todo.index}" class="checkbox" type="checkbox" name="checkbox" ${!todo.completed ? '' : 'checked'} />
+            <input id="task" type='text' class=" ${!todo.completed ? '' : 'checked'} " value="${todo.description}" />
+        </div>
+        <i id="ellips-btn" class="fa-solid fa-ellipsis-vertical ellips hidden"></i>
+        <i id="trash" class="fa-solid fa-trash trash"></i>
+    </div>
+      `).join('');
 };
-// Event to display todo
-document.addEventListener('DOMContentLoaded', UI.displayTodo);
 
-// add a book
+// save to local storage.
+const saveTodos = (elem) => localStorage.setItem('todos', JSON.stringify(elem));
 
-document.addEventListener('keypress', (event) => {
-  const list = document.querySelector('#myInput').value;
-  if (event.keyCode === 13 || event.which === 13) {
-    const data = JSON.parse(localStorage.getItem('todos'));
-    let index = 1;
-    if (data) {
-      index = data.length + 1;
-    }
-    if (list !== '') {
-      // instatiate
-      const newTask = {
-        description: list,
-        completed: false,
-        index,
-      };
-      // const listItem = new Todo(list);
-      UI.addToList(newTask);
-      // add a book to storage
-      Store.addTodo(newTask);
+// delete task function.
+const deleteTask = (e) => {
+  if (e.target.classList.contains('fa-trash')) {
+    e.target.parentElement.remove();
+    const newTasks = todos.filter((elem) => +elem.index !== +e.target.parentElement.id);
+    const updateTasks = newTasks.map((elem, index) => {
+      elem.index = index + 1;
+      return elem;
+    });
+    saveTodos(updateTasks);
+    todos = updateTasks;
+    displayTodo();
+  }
+};
+tasks.addEventListener('click', deleteTask);
 
-      UI.clearField();
-      event.preventDefault();
-    }
+// editing task function.
+const editing = (event) => {
+  if (event.target.type === 'text' && event.key === 'Enter') {
+    const targetedElem = event.target.parentElement.parentElement;
+    todos.filter((e) => +e.index === +targetedElem.id);
+    todos[targetedElem.id - 1].description = event.target.value;
+    saveTodos(todos);
+  }
+};
+
+tasks.addEventListener('keypress', editing);
+
+// update on changing the checkbock function.
+const updateChanges = (event) => {
+  if (event.target.checked) {
+    event.target.nextElementSibling.classList.add('checked');
+    todos[event.target.id - 1].completed = true;
+    saveTodos(todos);
+    displayTodo();
+  } else {
+    event.target.nextElementSibling.classList.remove('checked');
+    todos[event.target.id - 1].completed = false;
+    saveTodos(todos);
+    displayTodo();
+  }
+};
+
+tasks.addEventListener('change', updateChanges);
+
+// referesh on click refereshing button function.
+refresh.addEventListener('click', () => {
+  window.location.reload();
+});
+
+// clear all completed function.
+const clearAllCompleted = () => {
+  const uncompletedTasks = todos.filter((element) => element.completed !== true);
+  const newTasks = uncompletedTasks.map((elem, index) => {
+    elem.index = index + 1;
+    return elem;
+  });
+  saveTodos(newTasks);
+  window.location.reload();
+};
+
+clearAll.addEventListener('click', () => clearAllCompleted());
+
+// add new task function.
+const addTask = () => {
+  if (!addNewTask.value) return;
+  const index = todos.length + 1;
+  const description = addNewTask.value;
+  let completed;
+  todos = [...todos, new Todo(index, description, completed)];
+  saveTodos(todos);
+  displayTodo();
+  addNewTask.value = '';
+};
+
+enter.addEventListener('click', () => addTask());
+enterKey.addEventListener('keyup', (e) => {
+  if (e.keyCode === 13) {
+    addTask();
   }
 });
 
-// remove a book
-document.querySelector('.do-list-1').addEventListener('click', (e) => {
-  // remove book from UI
-  UI.deleteTask(e.target);
-
-  // remove book from Store
-  Store.deleteTodo();
-  Store.UpdateMyIndex();
+window.addEventListener('DOMContentLoaded', () => {
+  displayTodo();
+  addTask();
 });

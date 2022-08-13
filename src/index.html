@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-  <title>Webpack Exercise</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/985640b3e3.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js" integrity="sha512-zYXldzJsDrNKV+odAwFYiDXV2Cy37cwizT+NkuiPGsa9X1dOz04eHvUWVuxaJ299GvcJT31ug2zO4itXBjFx4w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>To Do List</title>
 </head>
+
 <body>
-  <section class="table-list">
-    <div id="myDIV" class="header">
-      <h1>My To Do List</h1>
-      <input type="text" id="myInput" placeholder="Add your list">
+    <div class="header">
+        <h1>Today's To Do</h1>
+        <i id="refersh" class="fa-solid fa-rotate icon"></i>
     </div>
-      <ul class="do-list-1">
-      </ul>
-      <ul class="list">
-        <li class="todo todo-clear"><a class="todo-link">clear all completed</a></li>
-      </ul>
-  </section>
+    <div class="list">
+        <div id="add-item" class="item-container">
+            <div class="item">
+                <input id="new-item" type="text" name="to-do-task" placeholder="Add to your list ..." />
+                <i id="enter" class="fa-solid fa-arrow-turn-down arrows enter-icon"></i>
+            </div>
+        </div>
+        <div id="item-list">
+            <div class="task-items"></div>
+            <div class="clear-completed">
+                <h3 id="clear">Clear All Completed</h3>
+            </div>
+        </div>
+    </div>
 </body>
-</html>
