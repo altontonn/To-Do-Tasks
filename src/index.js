@@ -44,7 +44,7 @@ class Store {
     if (localStorage.getItem('todos') === null) {
       todos = [];
     } else {
-      todos = JSON.parse(localStorage.getItem('todos'));
+      todos = JSON.parse(localStorage.getItem('todos')) || [];
     }
     return todos;
   }
