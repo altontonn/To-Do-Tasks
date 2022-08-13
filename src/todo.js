@@ -1,3 +1,4 @@
+
 export default class Todo {
   constructor(index, description, completed = true) {
     this.index = index;
@@ -22,6 +23,8 @@ export default class Todo {
   };
   // clear all completed function.
   export function clearAllCompleted () {
+    const saveTodos = (elem) => localStorage.setItem('todos', JSON.stringify(elem));
+    let todos = JSON.parse(localStorage.getItem('todos')) || [];
     const uncompletedTasks = todos.filter((element) => element.completed !== true);
     const newTasks = uncompletedTasks.map((elem, index) => {
         elem.index = index + 1;
