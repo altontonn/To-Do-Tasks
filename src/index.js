@@ -1,4 +1,6 @@
-import { default as Todo, updateChanges, clearAllCompleted } from './todo.js';
+import {
+  Todo, updateChanges, clearAllCompleted, displayTodo,
+} from './todo.js';
 
 import './style.css';
 
@@ -13,20 +15,6 @@ const enter = document.querySelector('#enter');
 const enterKey = document.querySelector('#new-item');
 
 let todos = JSON.parse(localStorage.getItem('todos')) || [];
-
-// display tasks function.
-const displayTodo = () => {
-  tasks.innerHTML = todos.map((todo) => ` 
-      <div id="${todo.index}" class="task item">
-        <div>
-            <input id="${todo.index}" class="checkbox" type="checkbox" name="checkbox" ${!todo.completed ? '' : 'checked'} />
-            <input id="task" type='text' class=" ${!todo.completed ? '' : 'checked'} " value="${todo.description}" />
-        </div>
-        <i id="ellips-btn" class="fa-solid fa-ellipsis-vertical ellips hidden"></i>
-        <i id="trash" class="fa-solid fa-trash trash"></i>
-    </div>
-      `).join('');
-};
 
 // save to local storage.
 const saveTodos = (elem) => localStorage.setItem('todos', JSON.stringify(elem));
@@ -65,7 +53,6 @@ tasks.addEventListener('change', updateChanges);
 refresh.addEventListener('click', () => {
   window.location.reload();
 });
-
 
 clearAll.addEventListener('click', () => clearAllCompleted());
 
