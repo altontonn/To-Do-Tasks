@@ -1,4 +1,5 @@
-import Todo from './todo.js';
+import { default as Todo, updateChanges, clearAllCompleted } from './todo.js';
+
 import './style.css';
 
 const tasks = document.querySelector('.task-items');
@@ -58,21 +59,6 @@ const editing = (event) => {
 
 tasks.addEventListener('keypress', editing);
 
-// update on changing the checkbock function.
-const updateChanges = (event) => {
-  if (event.target.checked) {
-    event.target.nextElementSibling.classList.add('checked');
-    todos[event.target.id - 1].completed = true;
-    saveTodos(todos);
-    displayTodo();
-  } else {
-    event.target.nextElementSibling.classList.remove('checked');
-    todos[event.target.id - 1].completed = false;
-    saveTodos(todos);
-    displayTodo();
-  }
-};
-
 tasks.addEventListener('change', updateChanges);
 
 // referesh on click refereshing button function.
@@ -80,16 +66,6 @@ refresh.addEventListener('click', () => {
   window.location.reload();
 });
 
-// clear all completed function.
-const clearAllCompleted = () => {
-  const uncompletedTasks = todos.filter((element) => element.completed !== true);
-  const newTasks = uncompletedTasks.map((elem, index) => {
-    elem.index = index + 1;
-    return elem;
-  });
-  saveTodos(newTasks);
-  window.location.reload();
-};
 
 clearAll.addEventListener('click', () => clearAllCompleted());
 
