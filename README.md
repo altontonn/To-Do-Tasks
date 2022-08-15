@@ -36,7 +36,7 @@ If you installed git you can clone the code to your machine, or download a ZIP o
 [Download the ZIP from this location](https://github.com/altontonn/To-Do-Tasks.git/archive/refs/heads/main.zip), or run the following [git](https://github.com/altontonn/To-Do-Tasks.git) command to clone the files to your machine:
 
 ```bash
-git https://github.com/altontonn/Webpack-SetUp.git
+https://github.com/altontonn/To-Do-Tasks.git
 ```
 
 - Once the files are downloaded or cloned on your machine, open the "Portfolio" folder in [Visual Studio Code(VSCode)](https://code.visualstudio.com/)
