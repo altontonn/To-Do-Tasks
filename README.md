@@ -18,7 +18,7 @@
 
 ## ⚒️ Built With
 
-- HTML, WEBPACK
+- HTML, WEBPACK, JAVASCRIPT
 
 ## Live Demo
 [see live](https://altontonn.github.io/To-Do-Tasks/dist/)
