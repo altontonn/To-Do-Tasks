@@ -1,6 +1,6 @@
 import {
   Todo, updateChanges, clearAllCompleted, displayTodo,
-} from './todo.js';
+} from './module/todo.js';
 
 import './style.css';
 
