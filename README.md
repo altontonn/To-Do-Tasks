@@ -33,7 +33,7 @@ The following tools help make it easier to run this code.
 ## 🔥 Getting Started
 
 If you installed git you can clone the code to your machine, or download a ZIP of all the files directly.
-[Download the ZIP from this location](https://github.com/altontonn/Webpack-SetUp/archive/refs/heads/main.zip), or run the following [git](https://github.com/altontonn/Webpack-SetUp.git) command to clone the files to your machine:
+[Download the ZIP from this location](https://github.com/altontonn/To-Do-Tasks.git/archive/refs/heads/main.zip), or run the following [git](https://github.com/altontonn/To-Do-Tasks.git) command to clone the files to your machine:
 
 ```bash
 git https://github.com/altontonn/Webpack-SetUp.git
@@ -50,7 +50,7 @@ git https://github.com/altontonn/Webpack-SetUp.git
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/altontonn/Webpack-SetUp/issues).
+Feel free to check the [issues page](https://github.com/altontonn/To-Do-Tasks.git/issues).
 
 ## Acknowledgements
 
