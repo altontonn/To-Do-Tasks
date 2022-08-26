@@ -8,20 +8,20 @@
 - This is webpack set up 
 
 ## Webpack Basic Set Up
-- https://webpack.js.org/guides/getting-started/#basic-setup
+- [webpack] (https://webpack.js.org/guides/getting-started/#basic-setup)
 
 ## Html Webpack Plugin
-- https://webpack.js.org/guides/output-management/#setting-up-htmlwebpackplugin
+- [htmlwebpackplugin] (https://webpack.js.org/guides/output-management/#setting-up-htmlwebpackplugin)
 
 ## CSS Loader
-- https://webpack.js.org/guides/asset-management/#loading-css
+- [css loader] (https://webpack.js.org/guides/asset-management/#loading-css)
 
 ## ⚒️ Built With
 
 - HTML, WEBPACK, JAVASCRIPT
 
 ## Live Demo
-[see live](https://altontonn.github.io/To-Do-Tasks/dist/)
+[See live](https://altontonn.github.io/To-Do-Tasks/dist/)
 
 
 ## 🧰 Tools
