@@ -8,13 +8,13 @@
 - This is webpack set up 
 
 ## Webpack Basic Set Up
-- [webpack] (https://webpack.js.org/guides/getting-started/#basic-setup)
+- [webpack](https://webpack.js.org/guides/getting-started/#basic-setup)
 
 ## Html Webpack Plugin
-- [htmlwebpackplugin] (https://webpack.js.org/guides/output-management/#setting-up-htmlwebpackplugin)
+- [htmlwebpackplugin](https://webpack.js.org/guides/output-management/#setting-up-htmlwebpackplugin)
 
 ## CSS Loader
-- [css loader] (https://webpack.js.org/guides/asset-management/#loading-css)
+- [css loader](https://webpack.js.org/guides/asset-management/#loading-css)
 
 ## ⚒️ Built With
 
