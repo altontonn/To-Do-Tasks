@@ -8,19 +8,20 @@
 - This is webpack set up 
 
 ## Webpack Basic Set Up
-- https://webpack.js.org/guides/getting-started/#basic-setup
+- [webpack](https://webpack.js.org/guides/getting-started/#basic-setup)
 
 ## Html Webpack Plugin
-- https://webpack.js.org/guides/output-management/#setting-up-htmlwebpackplugin
+- [htmlwebpackplugin](https://webpack.js.org/guides/output-management/#setting-up-htmlwebpackplugin)
 
 ## CSS Loader
-- https://webpack.js.org/guides/asset-management/#loading-css
+- [css loader](https://webpack.js.org/guides/asset-management/#loading-css)
 
 ## ⚒️ Built With
 
-- HTML, WEBPACK
+- HTML, WEBPACK, JAVASCRIPT
 
 ## Live Demo
+[See live](https://altontonn.github.io/To-Do-Tasks/dist/)
 
 
 ## 🧰 Tools
@@ -32,10 +33,10 @@ The following tools help make it easier to run this code.
 ## 🔥 Getting Started
 
 If you installed git you can clone the code to your machine, or download a ZIP of all the files directly.
-[Download the ZIP from this location](https://github.com/altontonn/Webpack-SetUp/archive/refs/heads/main.zip), or run the following [git](https://github.com/altontonn/Webpack-SetUp.git) command to clone the files to your machine:
+[Download the ZIP from this location](https://github.com/altontonn/To-Do-Tasks.git/archive/refs/heads/main.zip), or run the following [git](https://github.com/altontonn/To-Do-Tasks.git) command to clone the files to your machine:
 
 ```bash
-git https://github.com/altontonn/Webpack-SetUp.git
+https://github.com/altontonn/To-Do-Tasks.git
 ```
 
 - Once the files are downloaded or cloned on your machine, open the "Portfolio" folder in [Visual Studio Code(VSCode)](https://code.visualstudio.com/)
@@ -49,7 +50,7 @@ git https://github.com/altontonn/Webpack-SetUp.git
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/altontonn/Webpack-SetUp/issues).
+Feel free to check the [issues page](https://github.com/altontonn/To-Do-Tasks/issues).
 
 ## Acknowledgements
 
