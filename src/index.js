@@ -5,11 +5,8 @@ import {
 import './style.css';
 
 const tasks = document.querySelector('.task-items');
-
 const refresh = document.querySelector('#refersh');
-
 const clearAll = document.querySelector('#clear');
-
 const addNewTask = document.querySelector('#new-item');
 const enter = document.querySelector('#enter');
 const enterKey = document.querySelector('#new-item');
@@ -46,7 +43,6 @@ const editing = (event) => {
 };
 
 tasks.addEventListener('keypress', editing);
-
 tasks.addEventListener('change', updateChanges);
 
 // referesh on click refereshing button function.

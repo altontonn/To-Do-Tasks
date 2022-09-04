@@ -35,6 +35,12 @@ body {
   outline: none;
 }
 
+@media screen and (max-width: 410px) {
+  #task {
+    width: 50vw;
+  }
+}
+
 .item {
   display: flex;
   flex-direction: row;

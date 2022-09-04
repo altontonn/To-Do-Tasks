@@ -12,7 +12,7 @@ export function displayTodo() {
   const tasks = document.querySelector('.task-items');
   tasks.innerHTML = todos.map((todo) => ` 
       <div id="${todo.index}" class="task item">
-        <div>
+        <div class="check">
             <input id="${todo.index}" class="checkbox" type="checkbox" name="checkbox" ${!todo.completed ? '' : 'checked'} />
             <input id="task" type='text' class=" ${!todo.completed ? '' : 'checked'} " value="${todo.description}" />
         </div>
