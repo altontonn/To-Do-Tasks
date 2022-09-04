@@ -2,31 +2,31 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/985640b3e3.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js" integrity="sha512-zYXldzJsDrNKV+odAwFYiDXV2Cy37cwizT+NkuiPGsa9X1dOz04eHvUWVuxaJ299GvcJT31ug2zO4itXBjFx4w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <title>To Do List</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/985640b3e3.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js" integrity="sha512-zYXldzJsDrNKV+odAwFYiDXV2Cy37cwizT+NkuiPGsa9X1dOz04eHvUWVuxaJ299GvcJT31ug2zO4itXBjFx4w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <title>To Do List</title>
 <script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script></head>
 
 <body>
-    <div class="header">
-        <h1>Today's To Do</h1>
-        <i id="refersh" class="fa-solid fa-rotate icon"></i>
+  <sectionclass="header">
+    <h1>Today's To Do</h1>
+    <i id="refersh" class="fa-solid fa-rotate icon"></i>
+</section>
+  <main class="list">
+    <div id="add-item" class="item-container">
+      <div class="item">
+        <input id="new-item" type="text" name="to-do-task" placeholder="Add to your list ..." />
+        <i id="enter" class="fa-solid fa-arrow-turn-down arrows enter-icon"></i>
+      </div>
     </div>
-    <div class="list">
-        <div id="add-item" class="item-container">
-            <div class="item">
-                <input id="new-item" type="text" name="to-do-task" placeholder="Add to your list ..." />
-                <i id="enter" class="fa-solid fa-arrow-turn-down arrows enter-icon"></i>
-            </div>
-        </div>
-        <div id="item-list">
-            <div class="task-items"></div>
-            <div class="clear-completed">
-                <h3 id="clear">Clear All Completed</h3>
-            </div>
-        </div>
+    <div id="item-list">
+      <div class="task-items"></div>
+      <div class="clear-completed">
+        <h3 id="clear">Clear All Completed</h3>
+      </div>
     </div>
+  </main>
 </body>
