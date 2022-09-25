@@ -2,7 +2,7 @@
 
 ## To Do Tasks
 
-<img src="img/FireShot-task.png">
+<img src="img/FireShot-todo.png">
 
 > This is an To Do List app where one creates tasks that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete.
 
