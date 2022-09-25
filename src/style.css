@@ -11,6 +11,9 @@ body {
   margin: 80px auto 0 auto;
   border-radius: 8px;
   box-shadow: -2px 2px 5px 2px #d7d7d7;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .header {
@@ -21,6 +24,12 @@ body {
   padding: 20px;
   margin: 0 0 5px 0;
   border-bottom: 2px solid #aeaeae;
+}
+
+.header h1 {
+  margin: 0 auto;
+  font-size: 1.5rem;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .header .icon {
@@ -109,8 +118,8 @@ body {
 }
 
 .clear-completed {
-  background: #f1eeee;
-  color: #808080;
+  background: rgb(5, 168, 223);
+  color: #fff;
   margin: auto;
   padding: 20px;
 }
